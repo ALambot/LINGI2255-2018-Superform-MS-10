@@ -10,6 +10,7 @@ import rfeed
 import datetime
 import os
 import feedparser
+from pathlib import Path
 
 FIELDS_UNAVAILABLE = []
 
@@ -119,7 +120,7 @@ def run(publishing, channel_config):
         feed.items.extend(olderItems)
 
     a = feed.rss()
-    with open(localPath, 'w') as f:
+    with open(localPath, 'w', encoding="utf-8") as f:
         f.write(a)
-    with open(serverPath, 'w') as f:
+    with open(serverPath, 'w', encoding="utf-8") as f:
         f.write(a)

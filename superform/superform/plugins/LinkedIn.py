@@ -265,7 +265,9 @@ def get_linkedin_ini():
             raise FileNotFoundError("File not found: at %s" % file_to_open)
         else:
             config_parser = configparser.ConfigParser()
-            config_parser.read(file_to_open)
+            opening_file = []
+            opening_file.append(file_to_open)
+            config_parser.read(opening_file )
             return config_parser
 
 
